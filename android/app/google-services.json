@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072996665171",
+    "project_id": "yakkit-abcf9",
+    "storage_bucket": "yakkit-abcf9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072996665171:android:89732901c1ed83bfca83a6",
+        "android_client_info": {
+          "package_name": "com.example.yakkit_calorie_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9Xv5TW9a6dALpMeMErb6L2Yi8Sa1MK5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
