@@ -34,7 +34,10 @@ android/local.properties
 android/key.properties
 *.iml
 *.hprof
-
+assets/filtered_food_data_clean2.csv
+assets/filtered_food_data.csv
+assets/filtered_food_data_clean.csv
+build\app
 # iOS specific
 ios/.symlinks/
 ios/Pods/
@@ -43,7 +46,7 @@ ios/Runner/GeneratedPluginRegistrant.m
 ios/Runner.xcworkspace/
 ios/Runner.xcodeproj/project.xcworkspace/
 ios/Runner.xcodeproj/xcuserdata/
-
+android/app/build
 # Build artifacts
 build/
 # Web build artifacts
