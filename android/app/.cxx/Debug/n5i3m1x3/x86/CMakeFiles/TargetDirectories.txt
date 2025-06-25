@@ -1,0 +1,2 @@
+E:/yakkit_calorie_tracker/android/app/.cxx/Debug/n5i3m1x3/x86/CMakeFiles/edit_cache.dir
+E:/yakkit_calorie_tracker/android/app/.cxx/Debug/n5i3m1x3/x86/CMakeFiles/rebuild_cache.dir

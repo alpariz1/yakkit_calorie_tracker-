@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Arka plan rengi -->
+    <item android:drawable="@android:color/white"/>
+
+    <!-- Eğer bir logo/resim ekleyecekseniz bu bölümü açın -->
+    <!--
+    <item>
+      <bitmap
+        android:gravity="center"
+        android:src="@mipmap/launch_image"/>
+    </item>
+    -->
+</layer-list>

@@ -1,0 +1,44 @@
+// android/settings.gradle
+
+// 1) Java sınıflarını fully-qualified yazmak yerine import’la kullanacağız
+import java.util.Properties
+import java.lang.IllegalStateException
+// settings.gradle en başına ekleyin
+
+pluginManagement {
+
+
+    // 2) local.properties’i oku
+    def localProps = new Properties()
+    file('local.properties').withInputStream { stream ->
+        localProps.load(stream)
+    }
+
+    // 3) flutter.sdk anahtarını al, yoksa exception fırlat
+    def flutterSdk = localProps.getProperty('flutter.sdk')
+    if (flutterSdk == null) {
+        throw new IllegalStateException(
+                'flutter.sdk must be set in local.properties'
+        )
+    }
+
+    // 4) SDK yolunu tanımla ve Flutter’a ait Gradle script’ini “include” et
+    settings.ext.flutterSdkPath = flutterSdk
+    includeBuild("$flutterSdk/packages/flutter_tools/gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id 'com.android.application'        version '8.8.0' apply false
+    id 'org.jetbrains.kotlin.android'   version '1.8.10' apply false
+    //id 'dev.flutter.flutter-gradle-plugin'
+    id 'dev.flutter.flutter-plugin-loader' version '1.0.0'
+    id 'com.google.gms.google-services' version '4.4.2' apply false
+}
+
+include ':app'

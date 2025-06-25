@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<BCPFORMAT xmlns="http://schemas.microsoft.com/sqlserver/2004/bulkload/format"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RECORD>
+        <!-- CSV dosyanızdaki her alan için FIELD tanımı -->
+        <FIELD ID="1" xsi:type="CharTerm" TERMINATOR=""" MAX_LENGTH="255" />
+        <FIELD ID="2" xsi:type="CharTerm" TERMINATOR=""" MAX_LENGTH="50" />
+        <FIELD ID="3" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="50" />
+        <FIELD ID="4" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="50" />
+        <FIELD ID="5" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="50" />
+        <FIELD ID="6" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="50" />
+        <FIELD ID="7" xsi:type="CharTerm" TERMINATOR="\n" MAX_LENGTH="50" />
+    </RECORD>
+    <ROW>
+        <!-- CSV dosyanızdaki alanların, Food tablonuzdaki sütunlara eşlenmesi.
+             id sütunu otomatik oluşturulacağı için burada yer almaz. -->
+        <COLUMN SOURCE="1" NAME="product_name" xsi:type="SQLNCHAR"/>
+        <COLUMN SOURCE="2" NAME="energy_kcal" xsi:type="SQLFLT8"/>
+        <COLUMN SOURCE="3" NAME="carbohydrates" xsi:type="SQLFLT8"/>
+        <COLUMN SOURCE="4" NAME="proteins" xsi:type="SQLFLT8"/>
+        <COLUMN SOURCE="5" NAME="fat" xsi:type="SQLFLT8"/>
+        <COLUMN SOURCE="6" NAME="fiber" xsi:type="SQLFLT8"/>
+        <COLUMN SOURCE="7" NAME="sugars" xsi:type="SQLFLT8"/>
+    </ROW>
+</BCPFORMAT>

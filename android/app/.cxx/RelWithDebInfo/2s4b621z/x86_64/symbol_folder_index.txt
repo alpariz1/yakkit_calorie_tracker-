@@ -1,0 +1,1 @@
+E:\yakkit_calorie_tracker\android\app\build\intermediates\cxx\RelWithDebInfo\2s4b621z\obj\x86_64

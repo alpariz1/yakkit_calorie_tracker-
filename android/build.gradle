@@ -1,0 +1,55 @@
+// Root-level build.gradle
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin
+        classpath 'com.android.tools.build:gradle:8.8.0'
+        // Google Services (Firebase)
+        classpath 'com.google.gms:google-services:4.4.2'
+        // Kotlin Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects { project ->
+    project.afterEvaluate {
+        // Sadece Android modüllerinde çalışsın
+        if (project.plugins.hasPlugin('com.android.application') ||
+                project.plugins.hasPlugin('com.android.library')) {
+
+            // Hem App hem de Library için ortak BaseExtension
+            project.extensions
+                    .configure(com.android.build.gradle.BaseExtension) { androidExt ->
+
+                        // Java 17 uyumluluğu
+                        androidExt.compileOptions {
+                            sourceCompatibility = JavaVersion.VERSION_17
+                            targetCompatibility = JavaVersion.VERSION_17
+                        }
+
+                        // Eğer Kotlin Android plugin’i varsa, jvmTarget’i de ayarla
+                        if (project.plugins.hasPlugin('org.jetbrains.kotlin.android')) {
+                            androidExt.kotlinOptions {
+                                jvmTarget = "17"
+                            }
+                        }
+                    }
+        }
+    }
+}
+
+// Temizlik görevi
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
