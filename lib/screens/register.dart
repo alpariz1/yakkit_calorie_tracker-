@@ -36,7 +36,8 @@ class _RegisterPageState extends State<RegisterPage> {
     //   127.0.0.1  yerine  10.0.2.2
     //final url = Uri.parse("http://10.0.2.2:8000/register");
     //final url = Uri.parse("192.168.43.171:8000/register");
-    final url = Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/register");
+    //final url = Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/register");
+    final url = Uri.parse("https://api.yakkit.shop/register");
     final response = await http.post(
       url,
       headers: {"Content-Type": "application/json"},

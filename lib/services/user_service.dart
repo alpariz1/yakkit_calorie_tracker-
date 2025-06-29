@@ -380,7 +380,8 @@ class FriendRequest {
 class UserService {
   //static const String baseUrl         = 'http://10.0.2.2:8000';
   //static const String baseUrl         = 'http://192.168.43.171:8000';
-  static const String baseUrl         = 'https://cc8e-176-227-2-12.ngrok-free.app';
+  //static const String baseUrl         = 'https://cc8e-176-227-2-12.ngrok-free.app';
+  static const String baseUrl         = 'https://api.yakkit.shop';
   static const String accessTokenKey  = 'access_token';
   static const String refreshTokenKey = 'refresh_token';
   static final   _storage             = FlutterSecureStorage();

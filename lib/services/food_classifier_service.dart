@@ -7,9 +7,9 @@ import 'package:yakkit_calorie_tracker/models/meal_entry.dart';
 class FoodClassifierService {
   //static const _url = 'http://10.0.2.2:8001/classify';
   //static const _url = 'http://192.168.43.171:8001/classify';
-  static const _url = 'https://77f1-176-227-2-12.ngrok-free.app/classify';
+  //static const _url = 'https://77f1-176-227-2-12.ngrok-free.app/classify';
   //static const _url = 'http://10.0.2.2/classify';
-
+  static const _url = 'https://classifier.yakkit.shop/classify';
   /// Sunucuya resmi gönderir, dönen JSON'dan sınıf ve kalori bilgilerini döndürür.
   static Future<Map<String, dynamic>> classifyImage(XFile image) async {
     final request = http.MultipartRequest('POST', Uri.parse(_url))
@@ -28,7 +28,8 @@ class MealPhotoService {
   // 1) classify+log endpoint URL’i
   //static const _url = 'http://10.0.2.2:8000/users/me/meals/photo';
   //static const _url = 'http://192.168.43.171:8000/users/me/meals/photo';
-  static const _url = 'https://cc8e-176-227-2-12.ngrok-free.app/users/me/meals/photo';
+  //static const _url = 'https://cc8e-176-227-2-12.ngrok-free.app/users/me/meals/photo';
+  static const _url = 'https://api.yakkit.shop/users/me/meals/photo';
   /// Fotoğrafı, seçilen mealName ve date ile gönderip anında MealEntry al.
   static Future<MealEntry> uploadAndLogMeal({
     required XFile image,

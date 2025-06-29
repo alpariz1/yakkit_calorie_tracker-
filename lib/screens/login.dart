@@ -28,7 +28,8 @@ class _LoginPageState extends State<LoginPage> {
     // Emulator kullanıyorsanız 10.0.2.2, gerçek cihazda backend IP'nizi kullanın.
     //final url = Uri.parse("http://10.0.2.2:8000/login");
     //final url = Uri.parse("http://192.168.1.34:8000/login");
-    final url = Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/login");
+    //final url = Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/login");
+    final url = Uri.parse("https://api.yakkit.shop/login");
     final response = await http.post(
       url,
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -49,7 +50,8 @@ class _LoginPageState extends State<LoginPage> {
       final userInfoResponse = await http.get(
         //Uri.parse("http://10.0.2.2:8000/userinfo"),
         //Uri.parse("http://192.168.43.171:8000/userinfo"),
-        Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/userinfo"),
+        //Uri.parse("https://cc8e-176-227-2-12.ngrok-free.app/userinfo"),
+        Uri.parse("https://api.yakkit.shop/userinfo"),
         headers: {"Authorization": "Bearer $token"},
       );
       if (userInfoResponse.statusCode == 200) {

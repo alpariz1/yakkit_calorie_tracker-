@@ -379,7 +379,8 @@ async def classify_and_log_meal(
     #resp = httpx.post("http://localhost/classify", files=files)
     #resp = httpx.post("http://app1:8001/classify", files=files)
     #resp = httpx.post("http://192.168.43.171:8001/classify", files=files)
-    resp = httpx.post("https://77f1-176-227-2-12.ngrok-free.app/classify", files=files)
+    #resp = httpx.post("https://77f1-176-227-2-12.ngrok-free.app/classify", files=files)
+    resp = httpx.post("https://classifier.yakkit.shop/classify", files=files)
     resp.raise_for_status()
     data = resp.json()
     label = data['class']
